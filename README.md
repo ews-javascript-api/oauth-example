@@ -69,3 +69,19 @@ We would like to acknowledge the folks who own/contribute to the following proje
 ## About The Code
 
 Code hosted on GitHub under MIT license
+
+
+
+# Changes for oAuth Example:
+changed resourceUrl in config.js 
+
+`exports.resourceURL = 'https://outlook.office365.com';`
+
+## register Azure AD app
+add azure ad app with WebApp/WebApi configuration. use homepage or returnurl as http://localhost:3000/auth/openid/return
+
+go to Azure AD app properties, open "Required Permissions" blade. 
+click on Add button to select API App, select Office 365 Exchange Online.
+once selected, in Select Permission, select all the permission required, I would say stick to minimal permission needed for app use case. for non admin onboarding, just activate "Delegated Admin" setting whcih does not need "Admin Access" to activate them. (except "Read all users' full profiles" permission)
+
+create key for your app and duration, make note of generated password after saving. this is shown only once.
