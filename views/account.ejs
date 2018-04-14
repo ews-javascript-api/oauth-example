@@ -3,9 +3,22 @@
 	<a href="/login">Log In</a>
 <% } else { %>
 <p>UPN: <%= user._json.upn %></p>
-<p>Profile ID: <%= user.id %></p>
-<p>Full Claimes</p>
-<%- JSON.stringify(user) %>
+<p>Profile ID: <%= user.oid %></p>
+<!-- <p>Full Claimes</p>
+<%- JSON.stringify(user) %> -->
+<p></p>
+<!-- <%if(tokens){%>
+<p> tokens: <%- JSON.stringify(tokens) %></p>
+<%}%> -->
+<%if(folder){%>
+<p>Folder Info</p>
+<p>Display name : <%= folder.DisplayName %> </p>
+<p>Chile Folder Count : <%= folder.ChildFolderCount %> </p>
+<p> Total Items in Folder : <%= folder.TotalCount %> </p>
+<p>Folder Class : <%= folder.FolderClass %> </p>
+<p> UniqueId : <%= folder.Id.UniqueId %> </p>
+<!-- <p> <%= folder.WellKnownFolderName %> </p> -->
+<%}%>
 <p></p>
 <a href="/logout">Log Out</a>
 <% } %>
